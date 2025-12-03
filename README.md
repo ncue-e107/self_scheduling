@@ -1,6 +1,6 @@
-# 🚀 PBT-Ray-Scheduler: Adaptive Resource Allocation for Population-Based Training
+# 🚀 PBT-Ray-Scheduler: A Hybrid Static-Dynamic Scheduling Framework for Efficient Hyperparameter Optimization on Heterogeneous Systems
 
-This project implements an advanced distributed **Population-Based Training (PBT)** framework using **Ray** for high-performance hyperparameter optimization. It features two novel adaptive scheduling strategies—**ERA** (Exponential Resource Allocation) and **ETA** (Execution Time-aware Allocation)—and includes a specialized **Garbage-Collecting/Pruning Allocation (GPA)** mechanism to dynamically retire underperforming nodes.
+This project implements an advanced distributed **Population-Based Training (PBT)** framework using **Ray** for high-performance hyperparameter optimization. It features two novel adaptive scheduling strategies—**ERA** (Exponential Resource Allocation) and **ETA** (Execution Time-aware Allocation)—and includes a specialized **retire(GPA)** mechanism to dynamically retire underperforming nodes.
 
 ## 🌟 Key Features
 
@@ -8,7 +8,7 @@ This project implements an advanced distributed **Population-Based Training (PBT
 * **Adaptive Scheduling Strategies:**
   * **ERA (Exponential Resource Allocation):** Dynamically assigns a decreasing number of trials to resources based on node performance scores and the current training stage.
   * **ETA (Execution Time-aware Allocation):** Dynamically assigns trials based on the estimated execution time of tasks on each node (slower nodes get fewer tasks).
-* **Resource Pruning (GPA):** The `PBT_GPA.py` scheduler includes a **Garbage-collecting/Pruning** mechanism. It identifies and retires the weakest idle nodes when training reaches a "late stage," freeing up resources and focusing on high-performance nodes.
+* **Resource Retire (GPA):** The `PBT_GPA.py` scheduler includes a **retire** mechanism. It identifies and retires the weakest idle nodes when training reaches a "late stage," freeing up resources and focusing on high-performance nodes.
 * **PBT Mutation:** Implements standard PBT logic with **Exploit** (copying top performers) and **Explore** (random hyperparameter perturbation).
 
 ## 📦 Project Structure
