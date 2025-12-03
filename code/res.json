@@ -1,0 +1,8 @@
+{
+    "CPU": {
+        "EXCHANGE_YOUR_CPU_IP": EXCHANGE_YOUR_CPU_CORE_NUM
+    },
+    "GPU": {
+        "EXCHANGE_YOUR_GPU_IP": 1
+    }
+}
