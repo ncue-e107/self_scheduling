@@ -15,12 +15,13 @@ This project implements an advanced distributed **Population-Based Training (PBT
 
 ```text
 .
-├── PBT_SPA.py          # Standard PBT Scheduler (Supports ERA/ETA modes)
-├── PBT_GPA.py          # PBT Scheduler with Node Pruning (Supports ERA/ETA modes)
-├── score.py            # Utility script to benchmark nodes and generate score.json
-├── score.json          # Node resource allocation and performance scores (Required by PBT scripts)
-├── res.json            # (Optional) Initial resource config input for score.py
+├── code/
+│   ├── PBT_SPA.py      # Standard PBT Scheduler (Supports ERA/ETA modes)
+│   ├── PBT_GPA.py      # PBT Scheduler with Node Pruning (Supports ERA/ETA modes)
+│   ├── score.py        # Utility script to benchmark nodes and generate score.json
+│   └── res.json        # (Optional) Initial resource config input for score.py
 ├── requirements.txt    # Python dependencies list
+├── LICENSE
 └── README.md
 ```
 
@@ -56,8 +57,12 @@ HEAD_NODE_IP = "xxx.xxx.xxx.xxx"
 #### 4. Generate Node Scores (`score.json`)
 
 The schedulers rely on a `score.json` file to understand the capability of each node.
+  1. **Navigate to the source code directory**:
+  ```bash
+  cd code
+  ```
 
-  1. **Prepare `res.json`**:Edit `res.json` defining your available IPs if you want `score.py` to target specific nodes.
+  2. **Prepare `res.json`**:Edit `res.json` defining your available IPs if you want `score.py` to target specific nodes.
 
   ```
   {
@@ -71,10 +76,15 @@ The schedulers rely on a `score.json` file to understand the capability of each 
 
   ```
 
-  2. **Run Benchmark**: Execute `score.py` on the cluster. It will run dummy training tasks to calculate the throughput (score) of each node.
+  3. **Run Benchmark**: Execute `score.py` on the cluster. It will run dummy training tasks to calculate the throughput (score) of each node.
 
 ## 🚀 How to execute
 
+First, ensure you are in the code directory:
+
+```bash
+cd code
+```
 You can choose between the Standard Scheduler (`PBT_SPA.py`) or the Pruning Scheduler (`PBT_GPA.py`). Both support `ERA` and `ETA` modes.
 
 #### Option 1: Standard PBT (`PBT_SPA.py`)
